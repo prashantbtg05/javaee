@@ -1,0 +1,40 @@
+							#001 : Introducing Java EE
+			===================================================================================================
+				01. Introduction
+			===================================================================================================
+				02.Overview of Java EE Applications
+			===================================================================================================
+		Java EE platform is an architecture for creating enterprise applications using Java and internet technology
+		Java technology summary [img: java_technology_summary.PNG]
+		
+			===================================================================================================
+				03. Enterprise Application Technoligies and Profiles
+			===================================================================================================
+		Developing a enterprise application from a stand alone appplications includes/add multiple requirements like multi-user support , multithreading , transactions etc.
+		Either a developer can start developing the components from the scratch to support these requirements ( apart from business logic) or he/she can levarage the techoligies provided by Oracle to support these requirements and focus on developing business logic [img: enterprise_application_technologies.PNG]
+		Java EE 6/7 introduces the java profiles which are basically the configuration for the java ee paltform for a specific applications
+		there are 2 java EE profiles available : java ee web profile & java ee full platform 
+		
+			===================================================================================================
+				04. Java EE Tehnology Specifications
+			===================================================================================================
+		java ee platform is defined by colloections of JSRs , that can be downloaded freely from JCP ( Java Community Process) websites
+		They can define the components and APIs available to application developers
+		they also define the infrastructure requrements for enterprise applications 
+		[img: services_and_apis.PNG]
+		Some JSRs only define APIs (eg: java mail API ,), whereas some defines services that must be supplied to developers who uses the vendor applications / implementations (eg: Servlets requires web containers to execute and those web containers should be able to supply some kind of services required by servlets i.e.; like sending/recieving the requests)
+		
+			====================================================================================================
+				5. Java EE platform tiers and architecture
+			====================================================================================================
+		
+		java encourages developers to develop tiered applications that divides the labor as per the speciality of the developer.
+		[img: n-tier-architecture.PNG] & [img: javaee-tiered-architecture.PNG]
+		Motivaton for tiering of applications are	
+			- division of labor around specialized servers
+			- formal definition of responsibilities so that developer working on a tier is not responsible for the other tier
+		N-Tier Applications
+			programatically separates application functionality across three(at least) or more tiers (eg: Client tier ; Presentation tier ;  business logic tier ; integration tier ; Data source tier)
+			the boundries are deined by the programatic interfaces
+		
+			

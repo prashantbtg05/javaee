@@ -1,0 +1,25 @@
+							#002 : Development Tools and servers
+			===================================================================================================
+				01. Java Application Server Implementations
+			===================================================================================================
+	An application server provides the execution environment for the java applications . To ensure the portability , app servers needs to conforms to various specifications
+	it provides the deployement ,management and execution environment for the application.
+	There are several implementations available [ Oracle : GlassFish , Weblogic ; IBM : Websphere ; Apache : TomEE , Tomcat ; Jboss]
+	
+			==================================================================================================
+				02. Selecting a Java EE Application Server
+			==================================================================================================
+	App Developers might have to evaluate their requirements before selecting an applications server.
+	the deifferent reasons for selecting a specific app server would be 
+		Cost ; Documentation suport ; supported java versions ; performance ; backward compatibility ; integration ; reliablity ; supported profiles ; Ease of administrations and so on
+		
+			==================================================================================================
+				03. Java EE IDEs
+			==================================================================================================
+	IDEs works as an editor and support many functions like 
+		compile codes
+		maintain components in graphical manner
+		validate HTML/XML files
+		Debug source codes
+		
+		

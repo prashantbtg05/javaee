@@ -1,0 +1,5 @@
+							#005 : Java Beans
+			===================================================================================================
+				01.	Java Beans
+			===================================================================================================
+	There are a number of Java technologies that are used when developing Java Enterprise Edition applications that are actually components of the Java Standard Edition platform. Three examples of these technologies are JavaBeans, Logging, and Annotations. A JavaBean is a reusable component that contains business logic for the application.  A JavaBean can be used to create a visual component for a web application [For example, an Abstract Window Toolkit (AWT) or a JSF GUI element.] or can be used to expose objects programmatically to web application. A common use for JavaBeans is to create an invisible component that provides flow control or data access

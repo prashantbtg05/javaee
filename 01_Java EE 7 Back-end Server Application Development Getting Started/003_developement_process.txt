@@ -1,0 +1,36 @@
+					#003 : Development Process
+			===================================================================================================
+				01.	Java EE Development Process
+			===================================================================================================
+	There are nuber of steps in java ee development process . the developer develops different components and packages them for deployment . 
+	There are number of different component package types [JAR / WAR / RAR / EAR]
+	Jar : contains EJB whihc contains business logic to be exposed to the application 
+	War : contains Servlets/jsps/jsfs/webservices and other web related files 
+	Rar : contains resource adapters whihc are responsible for connecting application to another system
+	Ear : these files contain other modules listed here such as web archive modules and Enterprise Java Bean modules. The benefit of placing all packages into an EAR file is so that deployment of all these modules occur at the same time
+	
+	major steps to developing an enterprise application:
+		 create a project [ IDE tool to create the project including tools like Maven, Ivy or Cradle]
+		 develop the code for the application
+		 check the code into source code control systems like Git and Subversion
+		 test the application . We can use a number of different tools to help test the application. We can use tools like JUnit, or also Hudson and Jenkins
+		 package the tool up [ generating WAR ]
+		 deploy the application . We can use hot deployment directory. We can use command line tools or web user interface. 
+		 
+		 
+			===================================================================================================
+				02. Overview of Java EE containers and components
+			===================================================================================================
+	Containers are runtime environments which offer services to the enterprise applications developed in Java. Interposing a container between the application components allows the container to transparently inject the services that are required by the component, such as declarative transaction management, security checks, resource pooling and state management.
+	There are 3 types of containers [web container , ejb container, application client container for Java SE]
+	The first container is the web container. The web container manages and executes web components such as servlets, JSP pages, JSF pages and web services. This container is responsible for delivering web pages and responses to web clients. 
+	Then we have the Enterprise Java Bean container.This container manages the execution of Enterprise Java Beans which contains business logic for your Java Enterprise application. 
+	The application client container also known as the ACC. contains a set of classes and libraries to Java Standard Edition applications. The ACC communicates with Enterprise Java Beans containers using RMIS, the communication protocol. It communicates with the web container using HTTP as the protocol. Java Enterprise Edition components have a number of characteristics
+	
+			====================================================================================================
+				03. Java EE Component Features
+			====================================================================================================
+	Features of Java EE Components
+		1. Able to maintain state: Maintaining state is the holding of data across method calls within a component.A component that does not store state is known as stateless
+		2. Encapsulation:  Encapsulation is the hiding of details from the calling client of what each of the methods is actually doing
+		3. Component proxy: A component can only interact with another component through that component's proxy. Even if the components are located in the same Java virtual machine, you'll receive an error if one component directly instantiates another component with the new operator

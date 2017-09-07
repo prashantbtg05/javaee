@@ -1,0 +1,30 @@
+							#004 : Packaging Java EE Applications
+			===================================================================================================
+				01.	Configuring and Packaging Java EE applications
+			===================================================================================================
+	Java Enterprise developers package individual components into archive files.Archive files are compressed files that contain all of the files that make up the component. The archive file contains all relevant class files that make up the logic of the component and then optional XML deployment descriptor file that defines the configuration of the component.
+	different Archive files in Java are
+	WAR :  web-related files .Java Enterprise Edition implementations support packaging most components into a WAR file, eliminating the need to support the super archive file known as the Enterprise Archive file
+			or 	EAR file
+	JAR :  Enterprise JavaBean module 
+	EAR	: contains the other modules listed here, such as the web archive module and the Enterprise JavaBean modules. The benefit of placing all packages into an EAR file is so that deployment of all these modules occur at the same time
+	RAR : resource archive module contains JCA components
+	
+			=====================================================================================================
+				02. Deployment Descriptors
+			=====================================================================================================
+	An XML formatted file that describes interactions between components as well as a component and its container . This can be done through annotations as well. Each type of component has its own specification for the format, naming convention, and attributes defined in the deployment descriptor file.  Note that if annotations are used in the code and a deployment descriptor file is used, the descriptor file will override the annotations.
+		Vendor-specific Deployment Descriptors:
+			application servers also have proprietary XML configuration files that allow you to control server-specific behavior. These files can be placed in the component archive file, such as a .WAR file. Examples of vendor-specific server settings may be things such as load balancing properties or session management settings
+			For instance, we could have a weblogic.xml, a glassfish-web.xml, or a sun-web.xml. 
+			Note that the server vendor will typically provide a document type definition file or an .XML schema file that describes the XML elements that need to go into this configuration file
+			
+			======================================================================================================
+				03. Installing Glassfish/Tomcat/Webloic Server
+			======================================================================================================
+	add and configure tomcat in Eclipse
+			
+			======================================================================================================
+				04. Writing a Test Application
+			======================================================================================================
+		Write and run a test application ( Java EE/ Web)
