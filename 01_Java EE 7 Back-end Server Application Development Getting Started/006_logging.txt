@@ -1,0 +1,49 @@
+							#006 : Logging	
+			===================================================================================================
+				01.	Overview of Java Logging
+			===================================================================================================
+	Developers commonly add  print statements to the code to be able to debug/diagonise what is wrong with the application.
+	This requires the adding of the print line statements, recompiling the application, finding the bugs, and then removing the print line statements from the code, and recompiling
+	Java provides logging features with the development kit ( JDK 4 onwards ) and developers should consider using these instead.The purpose of logging is to record important information about the execution of the application. At different times, you may decide to log different amounts of information, depending on what is important at that time
+	depending on the situation you might want to log
+		All of it
+		Some of it 
+		None of it ( no problem in application )
+	
+	Logging Frameworks:
+		log4j : popular logging framework for Apache servers
+		java.util.logging : built in logging functionality that comes with the Java Development Kit
+		
+			====================================================================================================
+				02. Working with the Logger Class
+			====================================================================================================
+	Logging allows a developer to write information to console across the network or maybe to a file that may be useful when troubleshooting
+	Handler : Where you write the logging information is known as the handler. 
+	Java has a default handler set up to write to the console so log messages are written to the console by default
+	The application is configured with a logging level and all logged messages of that level or above are displayed
+	
+	To implement logging functionality within the application, we can use the java.util.logging.Logger Class
+	[img: working_with_logger_class.PNG]
+	The first step is to instantiate a logger variable and assign the logger a name
+	Once you have instantiated the logger object, you can then call upon a number of methods to work with logging
+	The levels are SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST. [ in order ] . Each message is assigned a level, and the logger is configged to display messages above a certain level
+	
+			======================================================================================================
+				03. Handling Logging
+			======================================================================================================
+	When logging information in a Java application, you can have the log record discarded, written to the console, written across the network, or maybe even written to a file
+	Where you write the logging information is known as a handler [ java default handler = console]
+	Guarded Logging [img: guarded_logging.PNG]
+	Logging Handlers and Formatters [img: log_handlers_formatters.PNG ]
+	Logger Hierarchy [img: logger_heirarchy.PNG]
+	
+			=======================================================================================================
+				04. Configuring Logging
+			=======================================================================================================
+	Add according to the server type
+	
+			=======================================================================================================
+				05. Adding a Logger to a Java EE Application
+			=======================================================================================================
+	programatically and via configurations
+	

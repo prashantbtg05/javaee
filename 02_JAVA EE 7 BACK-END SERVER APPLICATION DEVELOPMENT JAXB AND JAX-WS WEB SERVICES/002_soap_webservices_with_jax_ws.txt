@@ -1,0 +1,56 @@
+									02. SOAP Webservices with JAX-WS
+			=====================================================================================
+				01. Overview of SOAP
+			=====================================================================================
+	The SOAP web services specification defines an interoperable, platform-independent means for component interaction. The SOAP web service requirements include decoupling message representation from transport mechanisms. The most common transport mechanism is HTTP and HTTPS. SOAP can also be transported via TCP, SMTP and POP3 and etc.
+	SOAP messages is enclosed in the communication protocol envelope. This can be various type of protocol. The SOAP message contains all information that is required to be sent over the Internet. It has two main parts, the SOAP-ENV envelope and the attachment. 
+	
+			======================================================================================
+				02. Overview of WSDL
+			======================================================================================
+	[img: structure_wsdl.PNG]
+	Web Services Description Language, or WSDL, is an XML-based interface definition language that is used for describing a web service. WSDL's rule in web services is similar to XML schema's rule in XML. WSDL provides an interface that exposes web services. It maps web service to underlying programs and software systems and describes how to connect and use a web service when two organizations connect. The client organization will receive a WSDL file from the serviced organization. WSDL can be used to generate SOAP client and SOAP tools. 
+	
+			======================================================================================
+				03. Overview of JAX-WS.
+			======================================================================================
+	AX-WS API is a Java API for creating SOAP-based web services. The JAX-WS is a technology for building web services and clients that communicate by using XML . Web services operations are transmitted as SOAP messages, which is XML files over HTTP.
+	With JAX-WS, client and web services are platform-independent. A JAX-WS client can access a web service that is not running on Java platform and vice versa. 
+	two approaches :
+	WSDL first & Code first 
+	
+			=======================================================================================
+				04. Overview of Creating a JAX-WS Web Service.
+			=======================================================================================
+	To create a JAX-WS web service, perform the following steps.
+		[img: create_a_webservice.PNG]
+	Requirements of jax-ws
+		the requirement of JAX-WS on the Java class, it must be annotated with javax.jws.WebService i.e.; @WebService
+		The class must not be declared final, must not be abstract, and must not be a finalized method. 
+		Finally, you must have a default public no-argument constructor. 
+	if no @WebMethod annotation are applied, all of the method of the class are exposed as web methods
+	
+	JAX-WS web requirements for web service methods:
+	First, it must be public. By default, every public method in the class will be part of the web services. 
+	Secondly, it must be annotated with javax.jws.WebMethod. Method can be executed as web services method by using @WebMethod(exclude=true). 
+	Thirdly, it must not be static or final. 
+	Lastly, it must have JAXB-compatible parameters, and return types. Parameters and return types must not implemented the java.rmi.Remote interface.
+	
+			========================================================================================
+				05. Overview of Creating a JAX-WS Client
+			========================================================================================
+	The basic SOAP web services can be accessed by a Java SE client.
+	You can either use any IDE or wsimport utility for making clients
+	one client creation operation produces six .java files [img: web_service_client.PNG]
+	Local WSDL Files [img: local_wsdl_files.PNG]
+	
+			========================================================================================
+				06. Overview of Annotating SOAP Web Service Methods
+			========================================================================================
+	Web services require unique names for each service. Use the @WebService annotation to specify a different service name.
+	@webmethod attributes:
+		name
+		action:  Action attribute defines the action for this operation. For SOAP binding, this determines the value of the SOAP action header
+		exclude :Exclude attribute is a Boolean that when set to true, the method will not be exposed as a WebMethod
+		
+	In creating WSDL operation parameter names, the default name of method parameter, are arg0, arg1, and so on [img: wsdl_method_params.PNG]

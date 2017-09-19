@@ -1,0 +1,34 @@
+							#007 : Annotations and Method Chaining	
+			===================================================================================================
+				01.	Overview of Annotations
+			===================================================================================================
+	How an application takes advantage of the services provided by the container can be programmed imperatively or declaratively. Imperative programming uses Java statements to customize the application. While declarative programming specifies configuration, such as services used by the container, by using metadata through annotations or a deployment descriptor file.
+	Annotations are metadata statements found in the Java code [starting with @ , for ex @Resource / @Inject]
+	The advantage of annotations is that you do not need to write a lot of code to call upon the feature of the service, while at the same time, you do not need to create a deployment descriptor file
+	 If you use both methods, the deployment descriptor file will override the annotation setting
+	 
+			===================================================================================================
+				02. Annnotation Types
+			===================================================================================================
+	@Deprecated
+	@Override
+	@SuppressWarning
+	@PostConstruct
+	@PreDestroy
+	Custom Annotations 
+		public @interface MyCustomAnnotation { }
+		
+			====================================================================================================
+				03. Using Annotations
+			====================================================================================================
+	 Using annotations is fairly straightforward. the code to create the annotation [img: createAnnotation.PNG].
+	 note that an element named value has a special meaning. If the annotation has an element called value, you can populate the element without using the element name when using the annotation [img: createAnnotation.PNG]
+	 
+	 @Target:You can control where an annotation can be used by using the @Target annotation. @Target is used to limit MyAnnotation to be used on a method or a type in [img: target_annotation.PNG]
+	Annotation Retention :
+	
+	Annotations are a big part of Java Enterprise development with a common annotation defined in JSR 250. Many components use annotations, such as Enterprise JavaBeans, Servlets, Web Services, JSF and CDI for Java Enterprise development. In this video, you learned how to use annotations
+	
+			====================================================================================================
+				04. Method Chaining
+			====================================================================================================

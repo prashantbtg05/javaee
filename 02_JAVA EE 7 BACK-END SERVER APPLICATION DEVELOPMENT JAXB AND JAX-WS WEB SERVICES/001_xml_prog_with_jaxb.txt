@@ -1,0 +1,97 @@
+									01. XML Programming with JAX-B
+			=====================================================================================
+				01. Overview of XML
+			=====================================================================================
+	 XML documents are a markup language that are meant to exchange data free from platform type and restriction.  XML can be transferred over the Internet and is becoming the standard way to describe data on the web.
+		Advantage of using XML
+	XML enables us a simple and extensible way to describe data.
+	It helps simplify communication and helps interchange data
+	instead of writing code to exchange data with different systems, we simply follow document rules defined in the document type definition. 
+	
+		Importance in web services ( Def: Web service is a technology based on a set of standards that provides a solution for an application-to-application communication )
+	Many web services standard are XML-based. [such as SOAP, WSDL, and UDDI. Universal Description, Discovery and Integration (UDDI) is an example of an XML-based web service standard in the registration and discovery area.
+	Web Services Description Language (WSDL) is an example of an XML-based web service standard in the service description area	
+	SOAP is an example of an XML-based web service standard in the messaging field
+	
+			=====================================================================================
+				02. XML Document Components
+			=====================================================================================
+	An XML document contains a prologue or sometimes called a preamble and the root element [img: xml_structure.PNG]
+	 In the XML declaration, the only attribute that is mandatory is the version's attribute. Additional attribute can be added such as the encoding attribute which defines the encoding of the documents. By default, XML documents are encoded in the UTF-8 formats.
+	 Another attribute that can be added to the declaration is the stand-alone attribute. If the stand-alone attribute is set to yes, the XML will ignore the DTD rule.
+	 An XML document comprises storage unit that contains parsed or unparsed data [img: parsed_unparsed_xml_elements.PNG ]
+	Tag names are case-sensitive and must be identical
+	Empty elements are elements that contain no data, for example, <initials></initials>. They may appear as a single tag, for example, <initials/>
+	An XML attribute is a named value pair that are associated with a particular element
+	
+			=====================================================================================
+				03. XML Schemas
+			=====================================================================================
+	 The XML schema document, or the XSD, defines the rules which the XML file must follow. The vocabulary or allowed elements and types of XML documents can be defined through the use of XML schemas
+	 They're several different built-in XML schema data types. The string type, int type, decimal type and many others such as Boolean, float, and so on.
+	 An XML namespace uniquely identifies an XML vocabulary in an XML document. XML namespaces serve a function that is similar to Java packages. XML namespaces allow the use of multiple XML vocabularies in a single XML document
+		eg:
+			<address:person xmlns:address="http://example.com/address">
+			</address:person>
+	 The URL address you see here is a unique identifier that defines this vocabulary. This could be any string, however by convention this is typically a URL.
+	 Generally, information about this vocabulary can be found at the URL provided.
+	 
+			=====================================================================================
+				04. Overview of Jax-B
+			=====================================================================================
+	There are several ways to process XML in Java. 
+	The Java API for XML processing, or JAXP, includes SAX and DOM. 
+		SAX is an event-based parser framework. Developers create event handler that fires when reading a document. 
+		DOM is an object model. An XML document is converted into a tree of object consisting of types such as org.w3c.dom.Element. 
+	Another way to process XML in Java is Streaming API for XML, or StAX. StAX implements a full parser API
+	The third way is the Java architecture for XML binding or JAXB. JAXB is a higher model compared to the JAXP. Instead of writing code to parse the XML document manually, JAXB provides a way to bind XML directly to the Java object via binding annotations [img: jaxb_data_binding_process.PNG]
+		JAXB allows reading and writing of XML documents and is an object based model of XML document structure similar to DOM
+		JAXB provides an easy way to bind XML schemas to Java representations
+		JAXB is an annotation-based configuration of Java-to-XML mapping. And it supports XML-Schema-to-Java-class generation and Java-class-to-XML-Schema generation
+	marshal/unmarshal:
+		The process from XML to Java is called unmarshal, and the vice versa is called marshal
+		
+			======================================================================================
+				05. Reading and Writing XML Data with JAXB
+			======================================================================================
+	Reading XML is accomplished by using JAXBContext, one or more JAXB-annotated class, and an Unmarshaller
+	Unmarshalling provides the client application the ability to convert XML data into JAXB derived object
+	
+	Writing XML is accomplished by using a JAXBContext, one or more JAXB-annotated class, and a Marshaller.
+	Marshalling provides a client application the ability to convert a JAXB-derived Java object tree into XML data.
+	
+	xjc: [img: xjc-schema_to_java.PNG]
+	xjc is the JAXB binding compiler .  It takes an XML Schema as input, and produces a Java package containing Java classes
+	
+	schemagen: [img: schemagen_to_java.PNG]
+	The schemagen is the JAXB Java-to-XML-Schema generator.
+	The command produces schema1.xsd and Person.class. Person.java is the input, an XML schema is generated, and a class file is also generated by our javac
+	
+			========================================================================================
+				06. JAX-B Annotations
+			========================================================================================
+	[img: jaxb_annotations.PNG]
+	JAXB annotations defines how a Java class can be translated into an XML document and vice-versa
+	@XmlRootElement : The XmlRootElement annotation is used to indicate that a class is used as a global or root XML element. In the XML schema, both root element and child element are defined by the xs element tag. However, the JAXB annotation separates them. So @XmlRootElement is for the root element only
+	@XmlType: The XmlType annotation is used to specify the name of the complex type and specify the order of child element . The XmlType annotation can be used along with the @XmlRootElement or without it
+	@XmlAccessorType: The XmlAccessorType annotation on a class controls which member are bound to the XML. The possible value, our PUBLIC_MEMBER, FIELD, PROPERTY and NONE [img: xmlaccessortype.PNG]
+	@XmlElement: The XmlElement annotation is used to control binding of class member to XML. XmlElement overrides XMLAccesorType [i.e even if @XmlAccessorType is set to NONE and @XmlElement is defined , binding will take place] [img: xmlelement.PNG]
+	@XmlAttribute : XmlAttribute annotation maps a class member to an XML attribute. It is similar to XmlElement, a mass attribute instead
+	
+			=========================================================================================
+				07. Marshalling a Java Class to an XML File
+			=========================================================================================
+	demonstration of jaxb annotations via a simple program
+			
+			=========================================================================================
+				08. Marshalling a Java Collection to an XML File
+			=========================================================================================
+	
+	demonstration of jaxb to use collections via a simple program	
+		eg: see com/prashant/jaxb/example/Employee.java
+				com/prashant/jaxb/example/EmployeeOffice.java
+	
+			=========================================================================================
+				09.	Generating a Schema from Java Source Files
+			=========================================================================================
+	
